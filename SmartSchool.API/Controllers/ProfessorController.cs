@@ -61,7 +61,7 @@ namespace SmartSchool.API.Controllers
         public IActionResult Put(int id, Professor Professor)
         {
             var alu = _context.Professos.AsNoTracking().FirstOrDefault(a => a.Id == id);
-            if (alu == null) return BadRequest("O aluno não foi encontrado");
+            if (alu == null) return BadRequest("O Professor não foi encontrado");
 
             _context.Update(Professor);
             _context.SaveChanges();
