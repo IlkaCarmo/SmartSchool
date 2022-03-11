@@ -2,7 +2,7 @@
 
 namespace SmartSchool.API.Migrations
 {
-    public partial class inicial : Migration
+    public partial class SmartSchool : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,7 +22,7 @@ namespace SmartSchool.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Professos",
+                name: "Professores",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -31,7 +31,7 @@ namespace SmartSchool.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Professos", x => x.Id);
+                    table.PrimaryKey("PK_Professores", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -47,9 +47,9 @@ namespace SmartSchool.API.Migrations
                 {
                     table.PrimaryKey("PK_Disciplinas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Disciplinas_Professos_ProfessorId",
+                        name: "FK_Disciplinas_Professores_ProfessorId",
                         column: x => x.ProfessorId,
-                        principalTable: "Professos",
+                        principalTable: "Professores",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -114,27 +114,27 @@ namespace SmartSchool.API.Migrations
                 values: new object[] { 7, "Paulo", "José", "9874512" });
 
             migrationBuilder.InsertData(
-                table: "Professos",
+                table: "Professores",
                 columns: new[] { "Id", "Nome" },
                 values: new object[] { 1, "Lauro" });
 
             migrationBuilder.InsertData(
-                table: "Professos",
+                table: "Professores",
                 columns: new[] { "Id", "Nome" },
                 values: new object[] { 2, "Roberto" });
 
             migrationBuilder.InsertData(
-                table: "Professos",
+                table: "Professores",
                 columns: new[] { "Id", "Nome" },
                 values: new object[] { 3, "Ronaldo" });
 
             migrationBuilder.InsertData(
-                table: "Professos",
+                table: "Professores",
                 columns: new[] { "Id", "Nome" },
                 values: new object[] { 4, "Rodrigo" });
 
             migrationBuilder.InsertData(
-                table: "Professos",
+                table: "Professores",
                 columns: new[] { "Id", "Nome" },
                 values: new object[] { 5, "Alexandre" });
 
@@ -301,7 +301,7 @@ namespace SmartSchool.API.Migrations
                 name: "Disciplinas");
 
             migrationBuilder.DropTable(
-                name: "Professos");
+                name: "Professores");
         }
     }
 }
