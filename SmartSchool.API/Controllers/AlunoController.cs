@@ -49,7 +49,7 @@ namespace SmartSchool.API.Controllers
 
         //api/aluno
         [HttpPost]
-        public IActionResult Post(AlunoDto model)
+        public IActionResult Post(AlunoRegistrarDto model)
         {
             var aluno = _mapper.Map<Aluno>(model);
 
@@ -67,7 +67,7 @@ namespace SmartSchool.API.Controllers
 
         //api/aluno
         [HttpPut("{id}")]
-        public IActionResult Put(int id, AlunoDto model)
+        public IActionResult Put(int id, AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoByID(id);
             if (aluno == null) return BadRequest("O aluno não foi encontrado");
@@ -86,7 +86,7 @@ namespace SmartSchool.API.Controllers
 
         //api/aluno
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, AlunoDto model)
+        public IActionResult Patch(int id, AlunoRegistrarDto model)
         {
             var aluno = _repo.GetAlunoByID(id);
             if (aluno == null) return BadRequest("O aluno não foi encontrado");
